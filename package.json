@@ -1,0 +1,66 @@
+{
+  "name": "bespoke-overview",
+  "version": "1.0.0",
+  "description": "Displays an overview version of a bespoke presentation",
+  "homepage": "https://github.com/fegemo/bespoke-overview",
+  "bugs": "https://github.com/fegemo/bespoke-overview/issues",
+  "author": {
+    "email": "fegemo@gmail.com",
+    "name": "Flávio",
+    "url": "https://github.com/fegemo"
+  },
+  "main": "./lib/bespoke-overview.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fegemo/bespoke-overview.git"
+  },
+  "scripts": {
+    "coveralls": "gulp coveralls",
+    "test": "gulp"
+  },
+  "peerDependencies": {
+    "bespoke": ">=1.0.0"
+  },
+  "devDependencies": {
+    "bespoke": "^1.0.0",
+    "bespoke-classes": "^1.0.0",
+    "bespoke-keys": "^1.0.0",
+    "bespoke-theme-fancy": "^0.4.0",
+    "bespoke-touch": "^1.0.0",
+    "browserify": "^11.0.0",
+    "del": "^1.2.0",
+    "function-bind": "^1.0.2",
+    "gulp": "^3.9.0",
+    "gulp-brfs": "^0.1.0",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-debug": "^2.0.1",
+    "gulp-header": "^1.2.2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "istanbul": "^0.3.17",
+    "jasmine-core": "^2.3.4",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.2",
+    "karma-browserify": "^4.2.1",
+    "karma-coverage": "^0.4.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "lodash": "^3.10.0",
+    "phantomjs": "^1.9.17",
+    "simulant": "^0.1.5",
+    "through": "^2.3.8",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-map": "^1.0.1",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "bespoke-plugin"
+  ]
+}
