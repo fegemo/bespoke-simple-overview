@@ -19,9 +19,25 @@ var bespoke = require('bespoke'),
 
 describe('bespoke-overview', function() {
 
-  beforeEach(createDeck.bind(null, {}));
+
+  describe('options', function() {
+    beforeEach(createDeck.bind(null, {
+      activationKey: 'c'
+    }));
+
+    it('should allow configuration for the activation key ("ESC")', function() {
+      pressKey('c');
+      expect(deck.parent.classList.contains('bespoke-overview')).toBe(true);
+    });
+
+    it('should not use the default activation key ("ESC")', function() {
+      pressKey(27);   // ESC
+      expect(deck.parent.classList.contains('bespoke-overview')).toBe(false);
+    });
+  });
 
   describe('general things', function() {
+    beforeEach(createDeck.bind(null, {}));
     beforeEach(function() {
       spyOn(deck, 'fire');
     });
@@ -42,9 +58,9 @@ describe('bespoke-overview', function() {
 
 
   });
-  
+
   describe('styled by the plugin', function() {
-    
+
   });
 
 });

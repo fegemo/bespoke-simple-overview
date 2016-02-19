@@ -2,7 +2,11 @@
 
 # bespoke-overview
 
-Displays an overview version of a bespoke presentation
+Displays an overview version of a bespoke presentation when `Esc` (configurable)
+is pressed.
+
+![Presentation with the overview mode off, showing one slide - the current one](docs/overview-mode-off.png)
+![Presentation with the overview mode on, showing about 5 slides](docs/overview-mode-on.png)
 
 ## Download
 
@@ -31,6 +35,17 @@ When using browser globals:
 ```js
 bespoke.from('#presentation', [
   bespoke.plugins.overview()
+]);
+```
+
+By default, bespoke-overview uses the `Esc` key to activate/deactivate the
+overview mode, but it can be changed using the option `activationKey`:
+
+```js
+bespoke.from('#presentation', [
+  overview({
+    activationKey: 'c'   // Defaults to ESC
+  })
 ]);
 ```
 
