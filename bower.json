@@ -1,7 +1,7 @@
 {
-  "name": "bespoke-overview",
+  "name": "bespoke-simple-overview",
   "version": "1.0.0",
-  "main": "./dist/bespoke-overview.js",
+  "main": "./dist/bespoke-simple-overview.js",
   "ignore": [
     "**/.*"
   ],

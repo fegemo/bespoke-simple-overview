@@ -1,18 +1,18 @@
 {
-  "name": "bespoke-overview",
+  "name": "bespoke-simple-overview",
   "version": "1.0.0",
   "description": "Displays an overview version of a bespoke presentation",
-  "homepage": "https://github.com/fegemo/bespoke-overview",
-  "bugs": "https://github.com/fegemo/bespoke-overview/issues",
+  "homepage": "https://github.com/fegemo/bespoke-simple-overview",
+  "bugs": "https://github.com/fegemo/bespoke-simple-overview/issues",
   "author": {
     "email": "fegemo@gmail.com",
     "name": "Flávio Coutinho",
     "url": "https://github.com/fegemo"
   },
-  "main": "./lib/bespoke-overview.js",
+  "main": "./lib/bespoke-simple-overview.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fegemo/bespoke-overview.git"
+    "url": "git://github.com/fegemo/bespoke-simple-overview.git"
   },
   "scripts": {
     "coveralls": "gulp coveralls",

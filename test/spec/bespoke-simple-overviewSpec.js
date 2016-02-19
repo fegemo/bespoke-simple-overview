@@ -1,7 +1,7 @@
 Function.prototype.bind = Function.prototype.bind || require('function-bind');
 
 var bespoke = require('bespoke'),
-  overview = require('../../lib-instrumented/bespoke-overview.js'),
+  overview = require('../../lib-instrumented/bespoke-simple-overview.js'),
   simulant = require('simulant'),
 
   deck,
@@ -17,7 +17,7 @@ var bespoke = require('bespoke'),
     simulant.fire(document, 'keydown', { which: which });
   };
 
-describe('bespoke-overview', function() {
+describe('bespoke-simple-overview', function() {
 
 
   describe('options', function() {
@@ -27,12 +27,12 @@ describe('bespoke-overview', function() {
 
     it('should allow configuration for the activation key ("ESC")', function() {
       pressKey('c');
-      expect(deck.parent.classList.contains('bespoke-overview')).toBe(true);
+      expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(true);
     });
 
     it('should not use the default activation key ("ESC")', function() {
       pressKey(27);   // ESC
-      expect(deck.parent.classList.contains('bespoke-overview')).toBe(false);
+      expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(false);
     });
   });
 

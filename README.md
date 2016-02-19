@@ -1,6 +1,6 @@
 [![Build Status](https://secure.travis-ci.org/fegemo/bespoke-overview.png?branch=master)](https://travis-ci.org/fegemo/bespoke-overview) [![Coverage Status](https://coveralls.io/repos/fegemo/bespoke-overview/badge.png)](https://coveralls.io/r/fegemo/bespoke-overview)
 
-# bespoke-overview
+# bespoke-simple-overview
 
 Displays an overview version of a bespoke presentation when `Esc` (configurable)
 is pressed.
@@ -12,8 +12,8 @@ is pressed.
 
 Download the [production version][min] or the [development version][max], or use a [package manager](#package-managers).
 
-[min]: https://raw.github.com/fegemo/bespoke-overview/master/dist/bespoke-overview.min.js
-[max]: https://raw.github.com/fegemo/bespoke-overview/master/dist/bespoke-overview.js
+[min]: https://raw.github.com/fegemo/bespoke-simple-overview/master/dist/bespoke-simple-overview.min.js
+[max]: https://raw.github.com/fegemo/bespoke-simple-overview/master/dist/bespoke-simple-overview.js
 
 ## Usage
 
@@ -23,7 +23,7 @@ For example, when using CommonJS modules:
 
 ```js
 var bespoke = require('bespoke'),
-  overview = require('bespoke-overview');
+  overview = require('bespoke-simple-overview');
 
 bespoke.from('#presentation', [
   overview()
@@ -38,7 +38,7 @@ bespoke.from('#presentation', [
 ]);
 ```
 
-By default, bespoke-overview uses the `Esc` key to activate/deactivate the
+By default, bespoke-simple-overview uses the `Esc` key to activate/deactivate the
 overview mode, but it can be changed using the option `activationKey`:
 
 ```js
@@ -54,13 +54,13 @@ bespoke.from('#presentation', [
 ### npm
 
 ```bash
-$ npm install bespoke-overview
+$ npm install bespoke-simple-overview
 ```
 
 ### Bower
 
 ```bash
-$ bower install bespoke-overview
+$ bower install bespoke-simple-overview
 ```
 
 ## Credits

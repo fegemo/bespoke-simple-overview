@@ -37,7 +37,7 @@ gulp.task('lint', function() {
 });
 
 gulp.task('instrument', function() {
-  return gulp.src('lib/bespoke-overview.js')
+  return gulp.src('lib/bespoke-simple-overview.js')
     .pipe(map(function(code, filename) {
       var instrumenter = new istanbul.Instrumenter(),
         relativePath = path.relative(__dirname, filename);
@@ -50,7 +50,7 @@ gulp.task('test', ['instrument'], function(done) {
   var server = new karma.Server({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
-  }, done);
+  }, function() { done(); });
   server.start();
 });
 
@@ -61,10 +61,10 @@ gulp.task('coveralls', ['test'], function() {
 
 gulp.task('compile', ['clean'], function() {
   return browserify({debug: true, standalone: 'bespoke.plugins.overview'})
-    .add('./lib/bespoke-overview.js')
+    .add('./lib/bespoke-simple-overview.js')
     .transform('brfs')
     .bundle()
-    .pipe(source('bespoke-overview.js'))
+    .pipe(source('bespoke-simple-overview.js'))
     .pipe(buffer())
     .pipe(header([
       '/*!',
@@ -75,7 +75,7 @@ gulp.task('compile', ['clean'], function() {
       ' */\n\n'
     ].join('\n'), pkg))
     .pipe(gulp.dest('dist'))
-    .pipe(rename('bespoke-overview.min.js'))
+    .pipe(rename('bespoke-simple-overview.min.js'))
     .pipe(uglify())
     .pipe(header([
       '/*! <%= name %> v<%= version %> ',
