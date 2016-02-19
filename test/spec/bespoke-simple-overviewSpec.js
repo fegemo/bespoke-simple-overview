@@ -22,7 +22,7 @@ describe('bespoke-simple-overview', function() {
 
   describe('options', function() {
     beforeEach(createDeck.bind(null, {
-      activationKey: 'c'
+      activationKey: 'c'.charCodeAt(0)
     }));
 
     it('should allow configuration for the activation key ("ESC")', function() {

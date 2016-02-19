@@ -3,6 +3,6 @@ window.deck = bespoke.from('article', [
   bespoke.plugins.touch(),
   bespoke.plugins.classes(),
   bespoke.themes.fancy(),
-  bespoke.plugins.bullets('li'),
-  bespoke.plugins.overview()
+  bespoke.plugins.simpleOverview({activationKey: 'd'.charCodeAt(0)}),
+  bespoke.plugins.bullets('li')
 ]);
