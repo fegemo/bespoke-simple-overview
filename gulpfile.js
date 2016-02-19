@@ -22,12 +22,12 @@ gulp.task('watch', function() {
   gulp.watch('test/spec/**/*.js', ['test']);
 });
 
-gulp.task('clean', function(done) {
-  del([
+gulp.task('clean', function() {
+  return del([
     'dist',
     'lib-instrumented',
     'test/coverage'
-  ], done);
+  ]);
 });
 
 gulp.task('lint', function() {
