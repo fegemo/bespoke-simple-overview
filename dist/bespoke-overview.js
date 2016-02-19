@@ -1,7 +1,7 @@
 /*!
  * bespoke-overview v1.0.0
  *
- * Copyright 2015, Flávio
+ * Copyright 2016, Flávio Coutinho
  * This content is released under the MIT license
  */
 
