@@ -14,6 +14,7 @@ var bespoke = require('bespoke'),
     ]);
   },
   pressKey = function(which) {
+    which = typeof which === 'string' ? which.toUpperCase().charCodeAt(0) : which;
     simulant.fire(document, 'keydown', { which: which });
   };
 
@@ -22,35 +23,17 @@ describe('bespoke-simple-overview', function() {
 
   describe('options', function() {
     beforeEach(createDeck.bind(null, {
-      activationKey: 'c'.charCodeAt(0)
+      activationKey: 'd'
     }));
 
     it('should allow configuration for the activation key ("ESC")', function() {
-      pressKey('c');
+      pressKey('d');
       expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(true);
     });
 
     it('should not use the default activation key ("ESC")', function() {
       pressKey(27);   // ESC
       expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(false);
-    });
-  });
-
-  describe('general things', function() {
-    beforeEach(createDeck.bind(null, {}));
-    beforeEach(function() {
-      spyOn(deck, 'fire');
-    });
-
-    it('should disable bulletting (bespoke-bullets) when "ESC" is hit', function() {
-      pressKey(27);   // ESC
-      expect(deck.fire).toHaveBeenCalledWith('bullets.disable');
-    });
-
-    it('should re-enable bulletting (bespoke-bullets) when "ESC" is hit again', function() {
-      pressKey(27);   // ESC
-      pressKey(27);   // ESC
-      expect(deck.fire.calls.argsFor(1)).toEqual(['bullets.enable']);
     });
   });
 

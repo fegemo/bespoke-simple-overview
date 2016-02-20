@@ -60,7 +60,7 @@ gulp.task('coveralls', ['test'], function() {
 });
 
 gulp.task('compile', ['clean'], function() {
-  return browserify({debug: true, standalone: 'bespoke.plugins.simpleOverview'})
+  return browserify({/*debug: true,*/ standalone: 'bespoke.plugins.simpleOverview'})
     .add('./lib/bespoke-simple-overview.js')
     .transform('brfs')
     .bundle()
