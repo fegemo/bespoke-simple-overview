@@ -1,0 +1,60 @@
+.bespoke-parent {
+  perspective: 900px;
+}
+
+.bespoke-parent .bespoke-slide {
+  transition-property: transform, opacity;
+}
+
+.bespoke-simple-overview .bespoke-slide {
+    transform: translate3d(0, 0, -2000px);
+    outline: 4px solid silver;
+    background-color: rgba(255, 255, 255, .2);
+    opacity: initial;
+}
+
+.bespoke-simple-overview .bespoke-slide:hover,
+.bespoke-simple-overview .bespoke-slide.bespoke-active {
+    outline-color: steelblue;
+}
+
+.bespoke-simple-overview .bespoke-slide.bespoke-before {
+    display: none;
+    transform: translate3d(-630%, 0, -2000px);
+}
+
+.bespoke-simple-overview .bespoke-slide.bespoke-after {
+    display: none;
+    transform: translate3d(630%, 0, -2000px);
+}
+
+.bespoke-simple-overview .bespoke-slide.bespoke-before-1,
+.bespoke-simple-overview .bespoke-slide.bespoke-before-2,
+.bespoke-simple-overview .bespoke-slide.bespoke-before-3,
+.bespoke-simple-overview .bespoke-slide.bespoke-before-4,
+.bespoke-simple-overview .bespoke-slide.bespoke-before-5,
+
+.bespoke-simple-overview .bespoke-slide.bespoke-after-1,
+.bespoke-simple-overview .bespoke-slide.bespoke-after-2,
+.bespoke-simple-overview .bespoke-slide.bespoke-after-3,
+.bespoke-simple-overview .bespoke-slide.bespoke-after-4,
+.bespoke-simple-overview .bespoke-slide.bespoke-after-5 {
+    display: flex;
+}
+
+.bespoke-simple-overview .bespoke-slide.bespoke-before-1 { transform: translate3d(-105%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-slide.bespoke-before-2 { transform: translate3d(-210%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-slide.bespoke-before-3 { transform: translate3d(-315%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-slide.bespoke-before-4 { transform: translate3d(-420%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-slide.bespoke-before-5 { transform: translate3d(-525%, 0, -2000px); }
+
+.bespoke-simple-overview .bespoke-slide.bespoke-after-1 { transform: translate3d(105%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-slide.bespoke-after-2 { transform: translate3d(210%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-slide.bespoke-after-3 { transform: translate3d(315%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-slide.bespoke-after-4 { transform: translate3d(420%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-slide.bespoke-after-5 { transform: translate3d(525%, 0, -2000px); }
+.bespoke-simple-overview .bespoke-bullet-inactive {
+    display: list-item;
+    opacity: initial;
+    transform: initial;
+}

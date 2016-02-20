@@ -4,7 +4,9 @@ var gulp = require('gulp'),
   map = require('vinyl-map'),
   istanbul = require('istanbul'),
   karma = require('karma'),
+  autoprefixer = require('gulp-autoprefixer'),
   coveralls = require('gulp-coveralls'),
+  csso = require('gulp-csso'),
   header = require('gulp-header'),
   rename = require('gulp-rename'),
   uglify = require('gulp-uglify'),
@@ -12,6 +14,7 @@ var gulp = require('gulp'),
   browserify = require('browserify'),
   source = require('vinyl-source-stream'),
   buffer = require('vinyl-buffer'),
+  merge = require('merge-stream'),
   path = require('path');
 
 gulp.task('default', ['clean', 'lint', 'test', 'compile']);
@@ -26,7 +29,8 @@ gulp.task('clean', function() {
   return del([
     'dist',
     'lib-instrumented',
-    'test/coverage'
+    'test/coverage',
+    'lib/bespoke-simple-overview.min.css'
   ]);
 });
 
@@ -36,14 +40,26 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('instrument', function() {
-  return gulp.src('lib/bespoke-simple-overview.js')
+gulp.task('styles', function() {
+  return gulp.src('lib/bespoke-simple-overview.css')
+    .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+    .pipe(csso())
+    .pipe(rename('bespoke-simple-overview.min.css'))
+    .pipe(gulp.dest('lib'));
+});
+
+gulp.task('instrument', ['styles'], function() {
+  var tasks = [];
+  tasks.push(gulp.src('lib/bespoke-simple-overview.js')
     .pipe(map(function(code, filename) {
       var instrumenter = new istanbul.Instrumenter(),
         relativePath = path.relative(__dirname, filename);
       return instrumenter.instrumentSync(code.toString(), relativePath);
     }))
-    .pipe(gulp.dest('lib-instrumented'));
+    .pipe(gulp.dest('lib-instrumented')));
+  tasks.push(gulp.src('lib/bespoke-simple-overview.min.css')
+    .pipe(gulp.dest('lib-instrumented')));
+  return merge(tasks);
 });
 
 gulp.task('test', ['instrument'], function(done) {
@@ -59,7 +75,7 @@ gulp.task('coveralls', ['test'], function() {
     .pipe(coveralls());
 });
 
-gulp.task('compile', ['clean'], function() {
+gulp.task('compile', ['clean', 'styles'], function() {
   return browserify({/*debug: true,*/ standalone: 'bespoke.plugins.simpleOverview'})
     .add('./lib/bespoke-simple-overview.js')
     .transform('brfs')

@@ -14,6 +14,11 @@ module.exports = function(config) {
       'test/**/*.js': 'browserify'
     },
 
+    browserify: {
+      debug: true,
+      transform: ['brfs']
+    },
+
     reporters: ['progress', 'coverage'],
 
     coverageReporter: {

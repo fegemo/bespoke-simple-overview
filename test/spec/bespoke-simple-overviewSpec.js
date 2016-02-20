@@ -20,6 +20,17 @@ var bespoke = require('bespoke'),
 
 describe('bespoke-simple-overview', function() {
 
+  // This test HAS TO BE the first one, because the plugin uses the package
+  // insert-css, which does not include the same css more than once.
+  // Because of that, we can't remove the stylesheet after each test, as we
+  // would be unable to put it back again (insert-css's internal silly cache)
+  describe('when styled by the plugin', function() {
+    it('should inject some CSS onto the document', function() {
+      var numberOfStylesheets = document.styleSheets.length;
+      createDeck({ insertStyles: true });
+      expect(document.styleSheets.length).toBeGreaterThan(numberOfStylesheets);
+    });
+  });
 
   describe('options', function() {
     beforeEach(createDeck.bind(null, {
@@ -36,14 +47,4 @@ describe('bespoke-simple-overview', function() {
       expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(false);
     });
   });
-
-  describe('styled by the theme', function() {
-
-
-  });
-
-  describe('styled by the plugin', function() {
-
-  });
-
 });
