@@ -31,7 +31,6 @@
     "bespoke-touch": "^1.0.0",
     "browserify": "^13.0.0",
     "del": "^2.2.0",
-    "function-bind": "^1.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-brfs": "^0.1.0",
