@@ -1,4 +1,5 @@
-[![Build Status](https://secure.travis-ci.org/fegemo/bespoke-simple-overview.png?branch=master)](https://travis-ci.org/fegemo/bespoke-simple-overview) [![Coverage Status](https://coveralls.io/repos/fegemo/bespoke-simple-overview/badge.png)](https://coveralls.io/r/fegemo/bespoke-simple-overview)
+[![Build Status](https://secure.travis-ci.org/fegemo/bespoke-simple-overview.png?branch=master)](https://travis-ci.org/fegemo/bespoke-simple-overview) [![Coverage Status](https://coveralls.io/repos/github/fegemo/bespoke-simple-overview/badge.svg?branch=master)](https://coveralls.io/github/fegemo/bespoke-simple-overview?branch=master)
+
 
 # bespoke-simple-overview
 

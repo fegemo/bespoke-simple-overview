@@ -71,7 +71,7 @@ gulp.task('test', ['instrument'], function(done) {
 });
 
 gulp.task('coveralls', ['test'], function() {
-  return gulp.src(['test/coverage/lcov/**/lcov.info'])
+  return gulp.src(['test/coverage/**/lcov.info'])
     .pipe(coveralls());
 });
 
