@@ -47,4 +47,49 @@ describe('bespoke-simple-overview', function() {
       expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(false);
     });
   });
+
+  describe('events', function() {
+    beforeEach(function() {
+      createDeck();
+    });
+
+    describe('"simple-overview.enable"', function() {
+      it('should ACTIVATE the overview mode when "simple-overview.enable" is received', function() {
+        deck.fire('simple-overview.enable');
+        expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(true);
+      });
+
+      it('should NOT ACTIVATE the overview mode when "simple-overview.enable" is received and we are already on overview mode', function() {
+        pressKey(27);
+        deck.fire('simple-overview.enable');
+        expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(true);
+      });
+    });
+
+    describe('"simple-overview.disable"', function() {
+      it('should DEACTIVATE the overview mode when "simple-overview.disable" is received', function() {
+        pressKey(27);
+        deck.fire('simple-overview.disable');
+        expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(false);
+      });
+
+      it('should NOT DEACTIVATE the overview mode when "simple-overview.disable" is received and we are already in regular mode', function() {
+        deck.fire('simple-overview.disable');
+        expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(false);
+      });
+    });
+
+    describe('"simple-overview.toggle"', function() {
+      it('should to ACTIVATE the overview mode when "simple-overview.toggle" is received and it\'s in regular mode', function() {
+        deck.fire('simple-overview.toggle');
+        expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(true);
+      });
+
+      it('should to DEACTIVATE the overview mode when "simple-overview.toggle" is received and it\'s in overview mode', function() {
+        pressKey(27);
+        deck.fire('simple-overview.toggle');
+        expect(deck.parent.classList.contains('bespoke-simple-overview')).toBe(false);
+      });
+    });
+  });
 });

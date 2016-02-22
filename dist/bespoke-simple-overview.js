@@ -85,7 +85,7 @@ module.exports = function(options) {
     deck.on('activate', onDeckActivated);
     deck.on('destroy', onDeckDestroyed);
 
-    // exposes 2 events to outside world so they can enable/disable this
+    // exposes 3 events to outside world so they can enable/disable/toggle this
     deck.on('simple-overview.enable', toggleSimpleOverview.bind(null, true));
     deck.on('simple-overview.disable', toggleSimpleOverview.bind(null, false));
     deck.on('simple-overview.toggle', toggleSimpleOverview.bind(null));
