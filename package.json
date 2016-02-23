@@ -9,7 +9,7 @@
     "name": "Flávio Coutinho",
     "url": "https://github.com/fegemo"
   },
-  "main": "./lib/bespoke-simple-overview.js",
+  "main": "./dist/bespoke-simple-overview.min.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/fegemo/bespoke-simple-overview.git"
@@ -19,8 +19,7 @@
     "test": "gulp"
   },
   "peerDependencies": {
-    "bespoke": ">=1.0.0",
-    "bespoke-classes": "^1.0.0"
+    "bespoke": ">=1.0.0"
   },
   "devDependencies": {
     "bespoke": "^1.0.0",
@@ -74,6 +73,7 @@
     "bespoke-plugin"
   ],
   "dependencies": {
-    "insert-css": "^0.2.0"
+    "insert-css": "^0.2.0",
+    "bespoke-classes": "^1.0.0"
   }
 }
