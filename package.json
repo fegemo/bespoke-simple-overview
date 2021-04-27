@@ -16,7 +16,7 @@
   },
   "scripts": {
     "coveralls": "gulp coveralls",
-    "test": "gulp"
+    "test": "gulp test"
   },
   "peerDependencies": {
     "bespoke": ">=1.1.0",
