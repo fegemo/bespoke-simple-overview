@@ -1,6 +1,6 @@
 {
   "name": "bespoke-simple-overview",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Displays an overview version of a bespoke presentation",
   "homepage": "https://github.com/fegemo/bespoke-simple-overview",
   "bugs": "https://github.com/fegemo/bespoke-simple-overview/issues",
@@ -19,61 +19,53 @@
     "test": "gulp"
   },
   "peerDependencies": {
-    "bespoke": ">=1.0.0"
+    "bespoke": ">=1.1.0",
+    "bespoke-classes": "^1.0.0"
   },
   "devDependencies": {
+    "@kollavarsham/gulp-coveralls": "^0.3.4",
     "bespoke": "^1.0.0",
     "bespoke-bullets": "^1.1.0",
     "bespoke-classes": "^1.0.0",
-    "bespoke-keys": "^1.0.0",
+    "bespoke-keys": "^1.1.0",
     "bespoke-theme-cube": "^2.0.1",
-    "bespoke-theme-fancy": "^0.5.1",
+    "bespoke-theme-fancy": "^0.6.0",
     "bespoke-theme-mozilla-sandstone": "0.0.2",
     "bespoke-theme-nebula": "^1.0.1",
     "bespoke-theme-voltaire": "^1.0.1",
     "bespoke-touch": "^1.0.0",
-    "browserify": "^13.0.0",
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-brfs": "^0.1.0",
-    "gulp-coveralls": "^0.1.4",
-    "gulp-csso": "^1.0.1",
-    "gulp-debug": "^2.0.1",
-    "gulp-header": "^1.2.2",
-    "gulp-jshint": "^2.0.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.2.0",
-    "istanbul": "^0.4.2",
-    "jasmine-core": "^2.3.4",
-    "jshint": "^2.9.1",
-    "jshint-stylish": "^2.0.1",
-    "karma": "^0.13.2",
-    "karma-browserify": "^5.0.1",
-    "karma-coverage": "^0.5.3",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "lodash": "^4.5.0",
-    "merge-stream": "^1.0.0",
-    "phantomjs-prebuilt": "^2.1.4",
-    "simulant": "^0.2.0",
-    "through": "^2.3.8",
-    "vinyl-buffer": "1.0.0",
-    "vinyl-map": "^1.0.1",
-    "vinyl-source-stream": "^1.1.0",
-    "vinyl-transform": "^1.0.0",
-    "watchify": "^3.7.0"
+    "browserify": "^17.0.0",
+    "browserify-css": "^0.15.0",
+    "delete": "^1.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-header": "^2.0.9",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-terser": "^2.0.1",
+    "jasmine-core": "^3.7.1",
+    "karma": "^6.3.2",
+    "karma-browserify": "^8.0.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.3",
+    "karma-jasmine": "^4.0.1",
+    "puppeteer": "^9.0.0",
+    "simulant": "^0.2.2",
+    "vinyl-buffer": "1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "vinyl-transform": "^1.0.0"
   },
+  "browserslist": [
+    "> 1% and last 2 versions and not dead and not ie > 0"
+  ],
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=12.0.0"
   },
   "license": "MIT",
   "keywords": [
     "bespoke-plugin"
-  ],
-  "dependencies": {
-    "insert-css": "^0.2.0",
-    "bespoke-classes": "^1.0.0"
-  }
+  ]
 }
