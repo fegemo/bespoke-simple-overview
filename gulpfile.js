@@ -13,7 +13,9 @@ const { src, dest, series, watch } = require('gulp'),
   source = require('vinyl-source-stream'),
   buffer = require('vinyl-buffer'),
   path = require('path'),
-  connect = require('gulp-connect');
+  connect = require('gulp-connect'),
+  ghpages = require('gh-pages');
+  
 
 
 function clean() {
