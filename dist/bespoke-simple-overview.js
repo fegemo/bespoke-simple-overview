@@ -5,84 +5,84 @@
  * This content is released under the MIT license
  */
 
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g=(g.bespoke||(g.bespoke = {}));g=(g.plugins||(g.plugins = {}));g.simpleOverview = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-var css = ".bespoke-parent{perspective:900px}.bespoke-parent .bespoke-slide{transition-property:transform,opacity}.bespoke-simple-overview .bespoke-slide{transform:translate3d(0,0,-2000px);outline:4px solid silver;background-color:rgba(255,255,255,.2);opacity:initial}.bespoke-simple-overview .bespoke-slide.bespoke-active,.bespoke-simple-overview .bespoke-slide:hover{outline-color:#4682b4}.bespoke-simple-overview .bespoke-slide.bespoke-before{display:none;transform:translate3d(-630%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after{display:none;transform:translate3d(630%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-1,.bespoke-simple-overview .bespoke-slide.bespoke-after-2,.bespoke-simple-overview .bespoke-slide.bespoke-after-3,.bespoke-simple-overview .bespoke-slide.bespoke-after-4,.bespoke-simple-overview .bespoke-slide.bespoke-after-5,.bespoke-simple-overview .bespoke-slide.bespoke-before-1,.bespoke-simple-overview .bespoke-slide.bespoke-before-2,.bespoke-simple-overview .bespoke-slide.bespoke-before-3,.bespoke-simple-overview .bespoke-slide.bespoke-before-4,.bespoke-simple-overview .bespoke-slide.bespoke-before-5{display:flex}.bespoke-simple-overview .bespoke-slide.bespoke-before-1{transform:translate3d(-105%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-2{transform:translate3d(-210%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-3{transform:translate3d(-315%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-4{transform:translate3d(-420%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-5{transform:translate3d(-525%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-1{transform:translate3d(105%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-2{transform:translate3d(210%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-3{transform:translate3d(315%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-4{transform:translate3d(420%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-5{transform:translate3d(525%,0,-2000px)}.bespoke-simple-overview .bespoke-bullet-inactive{display:list-item;opacity:initial;transform:initial}"; (require("browserify-css").createStyle(css, { "href": "dist\\bespoke-simple-overview.min.css" }, { "insertAt": "bottom" })); module.exports = css;
-},{"browserify-css":3}],2:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g=(g.bespoke||(g.bespoke = {}));g=(g.plugins||(g.plugins = {}));g.simpleOverview = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
+var css = ".bespoke-parent{perspective:900px}.bespoke-parent .bespoke-slide{transition-property:transform,opacity}.bespoke-simple-overview .bespoke-slide{transform:translate3d(0,0,-2000px);outline:4px solid silver;background-color:rgba(255,255,255,.2);opacity:initial}.bespoke-simple-overview .bespoke-slide.bespoke-active,.bespoke-simple-overview .bespoke-slide:hover{outline-color:#4682b4}.bespoke-simple-overview .bespoke-slide.bespoke-before{display:none;transform:translate3d(-630%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after{display:none;transform:translate3d(630%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-1,.bespoke-simple-overview .bespoke-slide.bespoke-after-2,.bespoke-simple-overview .bespoke-slide.bespoke-after-3,.bespoke-simple-overview .bespoke-slide.bespoke-after-4,.bespoke-simple-overview .bespoke-slide.bespoke-after-5,.bespoke-simple-overview .bespoke-slide.bespoke-before-1,.bespoke-simple-overview .bespoke-slide.bespoke-before-2,.bespoke-simple-overview .bespoke-slide.bespoke-before-3,.bespoke-simple-overview .bespoke-slide.bespoke-before-4,.bespoke-simple-overview .bespoke-slide.bespoke-before-5{display:flex}.bespoke-simple-overview .bespoke-slide.bespoke-before-1{transform:translate3d(-105%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-2{transform:translate3d(-210%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-3{transform:translate3d(-315%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-4{transform:translate3d(-420%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-5{transform:translate3d(-525%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-1{transform:translate3d(105%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-2{transform:translate3d(210%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-3{transform:translate3d(315%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-4{transform:translate3d(420%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-5{transform:translate3d(525%,0,-2000px)}.bespoke-simple-overview .bespoke-bullet-inactive{display:list-item;opacity:initial;transform:initial}"; (_dereq_("browserify-css").createStyle(css, { "href": "lib\\bespoke-simple-overview.css" }, { "insertAt": "bottom" })); module.exports = css;
+},{"browserify-css":3}],2:[function(_dereq_,module,exports){
 const ensureCharCode = value =>
-  typeof value === 'string' ? value.toUpperCase().charCodeAt(0) : value;
+  typeof value === 'string' ? value.toUpperCase().charCodeAt(0) : value
 
 
 module.exports = function ({ activationKey = 27, insertStyles = true } = {}) {
-  activationKey = ensureCharCode(activationKey);
+  activationKey = ensureCharCode(activationKey)
 
   return function (deck) {
-    var onDeckActivated,
+    let onDeckActivated,
       onActivationKeyPressed,
       onDeckDestroyed,
       onSlideChange,
       toggleSimpleOverview,
-      isOverviewActive;
+      isOverviewActive
 
     onDeckActivated = function () {
-      deck.on("activate", onDeckActivated)(); // de-register so it happens 1x
-      window.addEventListener("keydown", onActivationKeyPressed, false);
+      deck.on('activate', onDeckActivated)() // de-register so it happens 1x
+      window.addEventListener('keydown', onActivationKeyPressed, false)
 
       // inserts the css if necessary
       if (insertStyles) {
-        require("../dist/bespoke-simple-overview.min.css");
+        _dereq_('../lib/bespoke-simple-overview.css')
       }
 
       // if the deck.parent already has the bespoke-overview class, turn it on
       isOverviewActive = deck.parent.classList.contains(
-        "bespoke-simple-overview"
-      );
-    };
+        'bespoke-simple-overview'
+      )
+    }
     onDeckDestroyed = function () {
-      window.removeEventListener("keydown", onActivationKeyPressed, false);
-    };
+      window.removeEventListener('keydown', onActivationKeyPressed, false)
+    }
 
     onSlideChange = function (direction) {
-      var newSlideIndex;
+      let newSlideIndex
       if (isOverviewActive) {
-        newSlideIndex = deck.slide() + direction;
+        newSlideIndex = deck.slide() + direction
         if (newSlideIndex >= 0 && newSlideIndex < deck.slides.length) {
-          deck.slide(newSlideIndex);
+          deck.slide(newSlideIndex)
         }
-        return false;
+        return false
       }
-    };
+    }
 
     onActivationKeyPressed = function (e) {
       switch (e.which) {
-        case activationKey:
-          toggleSimpleOverview();
-          break;
-        default:
-          break;
+      case activationKey:
+        toggleSimpleOverview()
+        break
+      default:
+        break
       }
-    };
+    }
 
     toggleSimpleOverview = function (toActivate) {
       isOverviewActive =
-        typeof toActivate === "boolean" ? toActivate : !isOverviewActive;
-      deck.parent.classList.toggle("bespoke-simple-overview", isOverviewActive);
-    };
+        typeof toActivate === 'boolean' ? toActivate : !isOverviewActive
+      deck.parent.classList.toggle('bespoke-simple-overview', isOverviewActive)
+    }
 
-    deck.on("activate", onDeckActivated);
-    deck.on("destroy", onDeckDestroyed);
+    deck.on('activate', onDeckActivated)
+    deck.on('destroy', onDeckDestroyed)
 
     // exposes 3 events to outside world so they can enable/disable/toggle this
-    deck.on("simple-overview.enable", toggleSimpleOverview.bind(null, true));
-    deck.on("simple-overview.disable", toggleSimpleOverview.bind(null, false));
-    deck.on("simple-overview.toggle", toggleSimpleOverview.bind(null));
+    deck.on('simple-overview.enable', toggleSimpleOverview.bind(null, true))
+    deck.on('simple-overview.disable', toggleSimpleOverview.bind(null, false))
+    deck.on('simple-overview.toggle', toggleSimpleOverview.bind(null))
 
     // prevent bespoke-bullets from spoiling the fun
-    deck.on("prev", onSlideChange.bind(null, -1));
-    deck.on("next", onSlideChange.bind(null, 1));
-  };
-};
+    deck.on('prev', onSlideChange.bind(null, -1))
+    deck.on('next', onSlideChange.bind(null, 1))
+  }
+}
 
-},{"../dist/bespoke-simple-overview.min.css":1}],3:[function(require,module,exports){
+},{"../lib/bespoke-simple-overview.css":1}],3:[function(_dereq_,module,exports){
 'use strict';
 // For more information about browser field, check out the browser field at https://github.com/substack/browserify-handbook#browser-field.
 

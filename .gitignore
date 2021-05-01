@@ -3,3 +3,4 @@ bower_components
 lib-instrumented
 test/coverage
 .idea
+package-lock.json

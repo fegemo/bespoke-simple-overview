@@ -1,28 +1,28 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const bespoke = require('bespoke');
-const keys = require('bespoke-keys');
-const touch = require('bespoke-touch');
-const classes = require('bespoke-classes');
-const simpleOverview = require('../dist/bespoke-simple-overview.min.js');
-const bullets = require('bespoke-bullets');
+const bespoke = require('bespoke')
+const keys = require('bespoke-keys')
+const touch = require('bespoke-touch')
+const classes = require('bespoke-classes')
+const simpleOverview = require('../dist/bespoke-simple-overview.js')
+const bullets = require('bespoke-bullets')
 
 // themes
 const themes = {
-  fancy: require("bespoke-theme-fancy"),
-  cube: require("bespoke-theme-cube"),
-  'mozilla-sandstone': require("bespoke-theme-mozilla-sandstone"),
-  nebula: require("bespoke-theme-nebula"),
-  voltaire: require("bespoke-theme-voltaire")
-};
+  fancy: require('bespoke-theme-fancy'),
+  cube: require('bespoke-theme-cube'),
+  'mozilla-sandstone': require('bespoke-theme-mozilla-sandstone'),
+  nebula: require('bespoke-theme-nebula'),
+  voltaire: require('bespoke-theme-voltaire')
+}
 
-const path = document.location.pathname;
-const hasExtension = path.indexOf('.html') !== -1;
+const path = document.location.pathname
+const hasExtension = path.indexOf('.html') !== -1
 
 let theme = (hasExtension ? path.substring(
-    path.lastIndexOf('index-') + 'index-'.length, path.lastIndexOf('.html'))
-    : 'fancy');
+  path.lastIndexOf('index-') + 'index-'.length, path.lastIndexOf('.html'))
+  : 'fancy')
 if (theme === 'x') {
-  theme = 'fancy';
+  theme = 'fancy'
 }
 
 window.deck = bespoke.from('article', [
@@ -32,18 +32,174 @@ window.deck = bespoke.from('article', [
   themes[theme](),
   simpleOverview(),
   bullets('li')
-]);
+])
 
-},{"../dist/bespoke-simple-overview.min.js":2,"bespoke":12,"bespoke-bullets":3,"bespoke-classes":4,"bespoke-keys":5,"bespoke-theme-cube":6,"bespoke-theme-fancy":7,"bespoke-theme-mozilla-sandstone":8,"bespoke-theme-nebula":9,"bespoke-theme-voltaire":10,"bespoke-touch":11}],2:[function(require,module,exports){
+},{"../dist/bespoke-simple-overview.js":2,"bespoke":12,"bespoke-bullets":3,"bespoke-classes":4,"bespoke-keys":5,"bespoke-theme-cube":6,"bespoke-theme-fancy":7,"bespoke-theme-mozilla-sandstone":8,"bespoke-theme-nebula":9,"bespoke-theme-voltaire":10,"bespoke-touch":11}],2:[function(require,module,exports){
 (function (global){(function (){
-/*! bespoke-simple-overview v1.0.0 © 2021 Flávio Coutinho, MIT License */
 /*!
- * bespoke-simple-overview v1.0.0
+ * bespoke-simple-overview v1.1.0
  *
  * Copyright 2021, Flávio Coutinho
  * This content is released under the MIT license
  */
-!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var s;(s=(s=(s="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this).bespoke||(s.bespoke={})).plugins||(s.plugins={})).simpleOverview=e()}}((function(){return function e(s,o,t){function i(n,p){if(!o[n]){if(!s[n]){var l="function"==typeof require&&require;if(!p&&l)return l(n,!0);if(r)return r(n,!0);var a=new Error("Cannot find module '"+n+"'");throw a.code="MODULE_NOT_FOUND",a}var b=o[n]={exports:{}};s[n][0].call(b.exports,(function(e){return i(s[n][1][e]||e)}),b,b.exports,e,s,o,t)}return o[n].exports}for(var r="function"==typeof require&&require,n=0;n<t.length;n++)i(t[n]);return i}({1:[function(e,s,o){var t=".bespoke-parent{perspective:900px}.bespoke-parent .bespoke-slide{transition-property:transform,opacity}.bespoke-simple-overview .bespoke-slide{transform:translate3d(0,0,-2000px);outline:4px solid silver;background-color:rgba(255,255,255,.2);opacity:initial}.bespoke-simple-overview .bespoke-slide.bespoke-active,.bespoke-simple-overview .bespoke-slide:hover{outline-color:#4682b4}.bespoke-simple-overview .bespoke-slide.bespoke-before{display:none;transform:translate3d(-630%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after{display:none;transform:translate3d(630%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-1,.bespoke-simple-overview .bespoke-slide.bespoke-after-2,.bespoke-simple-overview .bespoke-slide.bespoke-after-3,.bespoke-simple-overview .bespoke-slide.bespoke-after-4,.bespoke-simple-overview .bespoke-slide.bespoke-after-5,.bespoke-simple-overview .bespoke-slide.bespoke-before-1,.bespoke-simple-overview .bespoke-slide.bespoke-before-2,.bespoke-simple-overview .bespoke-slide.bespoke-before-3,.bespoke-simple-overview .bespoke-slide.bespoke-before-4,.bespoke-simple-overview .bespoke-slide.bespoke-before-5{display:flex}.bespoke-simple-overview .bespoke-slide.bespoke-before-1{transform:translate3d(-105%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-2{transform:translate3d(-210%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-3{transform:translate3d(-315%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-4{transform:translate3d(-420%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-5{transform:translate3d(-525%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-1{transform:translate3d(105%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-2{transform:translate3d(210%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-3{transform:translate3d(315%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-4{transform:translate3d(420%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-5{transform:translate3d(525%,0,-2000px)}.bespoke-simple-overview .bespoke-bullet-inactive{display:list-item;opacity:initial;transform:initial}";e("browserify-css").createStyle(t,{href:"..\\dist\\bespoke-simple-overview.min.css"},{insertAt:"bottom"}),s.exports=t},{"browserify-css":3}],2:[function(e,s,o){e("fs");s.exports=function({activationKey:s=27,insertStyles:o=!0}={}){var t;return s="string"==typeof(t=s)?t.toUpperCase().charCodeAt(0):t,function(t){var i,r,n,p,l,a;i=function(){t.on("activate",i)(),window.addEventListener("keydown",r,!1),o&&e("../dist/bespoke-simple-overview.min.css"),a=t.parent.classList.contains("bespoke-simple-overview")},n=function(){window.removeEventListener("keydown",r,!1)},p=function(e){var s;if(a)return(s=t.slide()+e)>=0&&s<t.slides.length&&t.slide(s),!1},r=function(e){switch(e.which){case s:l()}},l=function(e){a="boolean"==typeof e?e:!a,t.parent.classList.toggle("bespoke-simple-overview",a)},t.on("activate",i),t.on("destroy",n),t.on("simple-overview.enable",l.bind(null,!0)),t.on("simple-overview.disable",l.bind(null,!1)),t.on("simple-overview.toggle",l.bind(null)),t.on("prev",p.bind(null,-1)),t.on("next",p.bind(null,1))}}},{"../dist/bespoke-simple-overview.min.css":1,fs:4}],3:[function(e,s,o){"use strict";var t=[],i=function(e,s){var o=document.head||document.getElementsByTagName("head")[0],i=t[t.length-1];if((s=s||{}).insertAt=s.insertAt||"bottom","top"===s.insertAt)i?i.nextSibling?o.insertBefore(e,i.nextSibling):o.appendChild(e):o.insertBefore(e,o.firstChild),t.push(e);else{if("bottom"!==s.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");o.appendChild(e)}};s.exports={createLink:function(e,s){var o=document.head||document.getElementsByTagName("head")[0],t=document.createElement("link");for(var i in t.href=e,t.rel="stylesheet",s)if(s.hasOwnProperty(i)){var r=s[i];t.setAttribute("data-"+i,r)}o.appendChild(t)},createStyle:function(e,s,o){o=o||{};var t=document.createElement("style");for(var r in t.type="text/css",s)if(s.hasOwnProperty(r)){var n=s[r];t.setAttribute("data-"+r,n)}t.sheet?(t.innerHTML=e,t.sheet.cssText=e,i(t,{insertAt:o.insertAt})):t.styleSheet?(i(t,{insertAt:o.insertAt}),t.styleSheet.cssText=e):(t.appendChild(document.createTextNode(e)),i(t,{insertAt:o.insertAt}))}}},{}],4:[function(e,s,o){},{}]},{},[2])(2)}));
+
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g=(g.bespoke||(g.bespoke = {}));g=(g.plugins||(g.plugins = {}));g.simpleOverview = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
+var css = ".bespoke-parent{perspective:900px}.bespoke-parent .bespoke-slide{transition-property:transform,opacity}.bespoke-simple-overview .bespoke-slide{transform:translate3d(0,0,-2000px);outline:4px solid silver;background-color:rgba(255,255,255,.2);opacity:initial}.bespoke-simple-overview .bespoke-slide.bespoke-active,.bespoke-simple-overview .bespoke-slide:hover{outline-color:#4682b4}.bespoke-simple-overview .bespoke-slide.bespoke-before{display:none;transform:translate3d(-630%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after{display:none;transform:translate3d(630%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-1,.bespoke-simple-overview .bespoke-slide.bespoke-after-2,.bespoke-simple-overview .bespoke-slide.bespoke-after-3,.bespoke-simple-overview .bespoke-slide.bespoke-after-4,.bespoke-simple-overview .bespoke-slide.bespoke-after-5,.bespoke-simple-overview .bespoke-slide.bespoke-before-1,.bespoke-simple-overview .bespoke-slide.bespoke-before-2,.bespoke-simple-overview .bespoke-slide.bespoke-before-3,.bespoke-simple-overview .bespoke-slide.bespoke-before-4,.bespoke-simple-overview .bespoke-slide.bespoke-before-5{display:flex}.bespoke-simple-overview .bespoke-slide.bespoke-before-1{transform:translate3d(-105%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-2{transform:translate3d(-210%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-3{transform:translate3d(-315%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-4{transform:translate3d(-420%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-before-5{transform:translate3d(-525%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-1{transform:translate3d(105%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-2{transform:translate3d(210%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-3{transform:translate3d(315%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-4{transform:translate3d(420%,0,-2000px)}.bespoke-simple-overview .bespoke-slide.bespoke-after-5{transform:translate3d(525%,0,-2000px)}.bespoke-simple-overview .bespoke-bullet-inactive{display:list-item;opacity:initial;transform:initial}"; (_dereq_("browserify-css").createStyle(css, { "href": "lib\\bespoke-simple-overview.css" }, { "insertAt": "bottom" })); module.exports = css;
+},{"browserify-css":3}],2:[function(_dereq_,module,exports){
+const ensureCharCode = value =>
+  typeof value === 'string' ? value.toUpperCase().charCodeAt(0) : value
+
+
+module.exports = function ({ activationKey = 27, insertStyles = true } = {}) {
+  activationKey = ensureCharCode(activationKey)
+
+  return function (deck) {
+    let onDeckActivated,
+      onActivationKeyPressed,
+      onDeckDestroyed,
+      onSlideChange,
+      toggleSimpleOverview,
+      isOverviewActive
+
+    onDeckActivated = function () {
+      deck.on('activate', onDeckActivated)() // de-register so it happens 1x
+      window.addEventListener('keydown', onActivationKeyPressed, false)
+
+      // inserts the css if necessary
+      if (insertStyles) {
+        _dereq_('../lib/bespoke-simple-overview.css')
+      }
+
+      // if the deck.parent already has the bespoke-overview class, turn it on
+      isOverviewActive = deck.parent.classList.contains(
+        'bespoke-simple-overview'
+      )
+    }
+    onDeckDestroyed = function () {
+      window.removeEventListener('keydown', onActivationKeyPressed, false)
+    }
+
+    onSlideChange = function (direction) {
+      let newSlideIndex
+      if (isOverviewActive) {
+        newSlideIndex = deck.slide() + direction
+        if (newSlideIndex >= 0 && newSlideIndex < deck.slides.length) {
+          deck.slide(newSlideIndex)
+        }
+        return false
+      }
+    }
+
+    onActivationKeyPressed = function (e) {
+      switch (e.which) {
+      case activationKey:
+        toggleSimpleOverview()
+        break
+      default:
+        break
+      }
+    }
+
+    toggleSimpleOverview = function (toActivate) {
+      isOverviewActive =
+        typeof toActivate === 'boolean' ? toActivate : !isOverviewActive
+      deck.parent.classList.toggle('bespoke-simple-overview', isOverviewActive)
+    }
+
+    deck.on('activate', onDeckActivated)
+    deck.on('destroy', onDeckDestroyed)
+
+    // exposes 3 events to outside world so they can enable/disable/toggle this
+    deck.on('simple-overview.enable', toggleSimpleOverview.bind(null, true))
+    deck.on('simple-overview.disable', toggleSimpleOverview.bind(null, false))
+    deck.on('simple-overview.toggle', toggleSimpleOverview.bind(null))
+
+    // prevent bespoke-bullets from spoiling the fun
+    deck.on('prev', onSlideChange.bind(null, -1))
+    deck.on('next', onSlideChange.bind(null, 1))
+  }
+}
+
+},{"../lib/bespoke-simple-overview.css":1}],3:[function(_dereq_,module,exports){
+'use strict';
+// For more information about browser field, check out the browser field at https://github.com/substack/browserify-handbook#browser-field.
+
+var styleElementsInsertedAtTop = [];
+
+var insertStyleElement = function(styleElement, options) {
+    var head = document.head || document.getElementsByTagName('head')[0];
+    var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+
+    options = options || {};
+    options.insertAt = options.insertAt || 'bottom';
+
+    if (options.insertAt === 'top') {
+        if (!lastStyleElementInsertedAtTop) {
+            head.insertBefore(styleElement, head.firstChild);
+        } else if (lastStyleElementInsertedAtTop.nextSibling) {
+            head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+        } else {
+            head.appendChild(styleElement);
+        }
+        styleElementsInsertedAtTop.push(styleElement);
+    } else if (options.insertAt === 'bottom') {
+        head.appendChild(styleElement);
+    } else {
+        throw new Error('Invalid value for parameter \'insertAt\'. Must be \'top\' or \'bottom\'.');
+    }
+};
+
+module.exports = {
+    // Create a <link> tag with optional data attributes
+    createLink: function(href, attributes) {
+        var head = document.head || document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+
+        link.href = href;
+        link.rel = 'stylesheet';
+
+        for (var key in attributes) {
+            if ( ! attributes.hasOwnProperty(key)) {
+                continue;
+            }
+            var value = attributes[key];
+            link.setAttribute('data-' + key, value);
+        }
+
+        head.appendChild(link);
+    },
+    // Create a <style> tag with optional data attributes
+    createStyle: function(cssText, attributes, extraOptions) {
+        extraOptions = extraOptions || {};
+
+        var style = document.createElement('style');
+        style.type = 'text/css';
+
+        for (var key in attributes) {
+            if ( ! attributes.hasOwnProperty(key)) {
+                continue;
+            }
+            var value = attributes[key];
+            style.setAttribute('data-' + key, value);
+        }
+
+        if (style.sheet) { // for jsdom and IE9+
+            style.innerHTML = cssText;
+            style.sheet.cssText = cssText;
+            insertStyleElement(style, { insertAt: extraOptions.insertAt });
+        } else if (style.styleSheet) { // for IE8 and below
+            insertStyleElement(style, { insertAt: extraOptions.insertAt });
+            style.styleSheet.cssText = cssText;
+        } else { // for Chrome, Firefox, and Safari
+            style.appendChild(document.createTextNode(cssText));
+            insertStyleElement(style, { insertAt: extraOptions.insertAt });
+        }
+    }
+};
+
+},{}]},{},[2])(2)
+});
+
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],3:[function(require,module,exports){
 module.exports = function(options) {

@@ -4,9 +4,11 @@ pre {
   border-radius: 5px;
   padding: 0 1em;
 }
+
 pre, code {
   width: 90%;
 }
+
 .jumbo {
   border: 1px solid goldenrod;
   padding: 0.25em;
@@ -15,6 +17,7 @@ pre, code {
   background: rgba(255,255,255,0.3);
   animation: sizing 500ms ease-out 0ms infinite alternate-reverse;
 }
+
 @keyframes sizing {
   from { transform: none; }
   to { transform: scale(1.1); }
